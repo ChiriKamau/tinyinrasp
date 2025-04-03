@@ -3,7 +3,7 @@ import tflite_runtime.interpreter as tflite
 import time
 
 # Path to your model
-MODEL_PATH = "/home/lima/tinyinrasp/Model_quantized.tflite"  # Update this to your model path
+MODEL_PATH = "/home/lima/tinyinrasp/Model_quantized2.tflite"  # Update this to your model path
 
 # Debugging: Check if the model path exists
 import os
