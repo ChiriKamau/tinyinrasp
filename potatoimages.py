@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import tflite_runtime.interpreter as tflite
 import time
-import os
+import matplotlib.pyplot as plt
 
 # Configuration
 MODEL_PATH = "/home/lima/tinyinrasp/Model_quant.tflite"
@@ -42,11 +42,12 @@ class_id = np.argmax(predictions)
 confidence = predictions[0][class_id]
 label = f"{LABELS[class_id]}: {confidence:.2f}"
 
-# Display result
-cv2.putText(image, label, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-cv2.imshow('Prediction', image)
+# Display result with matplotlib
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  # Convert back to RGB for matplotlib
+plt.imshow(image)
+plt.title(label)
+plt.axis('off')  # Turn off axes
+plt.show()
+
 print(f"Prediction: {label}")
 print(f"Inference Time: {(end_time - start_time) * 1000:.2f} ms")
-
-cv2.waitKey(0)
-cv2.destroyAllWindows()
