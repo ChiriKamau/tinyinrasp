@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 # Configuration
 MODEL_PATH = "/home/lima/tinyinrasp/Model_quant.tflite"
-IMAGE_PATH = "/home/lima/tinyinrasp/images/image2.JPG"
+IMAGE_PATH = "/home/lima/tinyinrasp/images/image3.JPG"
 LABELS = ["Healthy", "Early Blight", "Late Blight"]
 
 # Initialize TFLite interpreter
