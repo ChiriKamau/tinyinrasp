@@ -6,7 +6,7 @@ import os
 
 # Configuration
 MODEL_PATH = "/home/lima/tinyinrasp/Model_quant.tflite"
-IMAGE_PATH = "/home/lima/tinyinrasp/images/image1.jpg"  # Update extension if different
+IMAGE_PATH = "/home/lima/tinyinrasp/images/image1.JPG"  # Update extension if different
 LABELS = ["Healthy", "Early Blight", "Late Blight"]
 
 # Initialize TFLite interpreter
