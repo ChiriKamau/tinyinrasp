@@ -6,7 +6,7 @@ import os
 
 # Configuration
 MODEL_PATH = "/home/lima/tinyinrasp/Model_quant.tflite"
-IMAGE_PATH = "/home/lima/tinyinrasp/images/image1.JPG"  # Update extension if different
+IMAGE_PATH = "/home/lima/tinyinrasp/images/image1.JPG"
 LABELS = ["Healthy", "Early Blight", "Late Blight"]
 
 # Initialize TFLite interpreter
@@ -25,9 +25,10 @@ if image is None:
     print(f"Failed to load image at {IMAGE_PATH}")
     exit()
 
+# Resize and preprocess
 img = cv2.resize(image, (width, height))
 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-img = np.expand_dims(img, axis=0).astype(np.uint8)
+img = np.expand_dims(img, axis=0).astype(np.float32) / 255.0  # Float32 normalization
 
 # Run inference
 start_time = time.time()
